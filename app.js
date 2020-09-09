@@ -2,8 +2,6 @@ const express = require("express")
 const app = express()
 const path = require("path")
 
-app.listen(3000)
-
 app.get("/", function(req, res) {
         res.send(`Ni Superman, Iron
         Man o La Mujer Maravilla son tan importantes cómo las y los Heroes de carne y
@@ -21,3 +19,9 @@ app.get("/creditos", function(req, res) {
     res.send(`Developer: Oscar Ariel Saucedo ----
     Trabajo finalizado`)
 })
+
+app.get("*", function(req, res) {
+    res.send(`Error: Not Found`)
+})
+
+app.listen(3000)
